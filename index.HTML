@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>
+            Add Cart
+        </title>
+        <script src="https://kit.fontawesome.com/76a388af8b.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+
+    <body>
+        <h1><i class="fa-solid fa-cart-shopping"></i></h1>
+        <section>
+            <div>
+                <img src="https://www.91-cdn.com/hub/wp-content/uploads/2022/06/HTML-colour-codes-1200x675.jpg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet deserunt impedit voluptatum dolor cumque nesciunt autem! Vitae magnam nulla inventore.</p>
+                <h6>Price:6000</h6>
+                <span></span>
+                <button>Add-cart</button>
+            </div>
+            <div>
+                <img src="https://cdn.mos.cms.futurecdn.net/Vp9WvV7YKdH4k8sKRePcE8.jpg">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet deserunt impedit voluptatum dolor cumque nesciunt autem! Vitae magnam nulla inventore.</p>
+                <h6>Price:5000</h6>
+                <span></span>
+                <button>Add-cart</button>
+            </div>
+            <div>
+                <img src="https://yourengineer.in/wp-content/uploads/2022/08/Javascript-Cover.png">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet deserunt impedit voluptatum dolor cumque nesciunt autem! Vitae magnam nulla inventore.</p>
+                <h6>Price:9000</h6>
+                <span></span>
+                <button>Add-cart</button>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxQvo7DiCYq0KDfGNiQFlNiaozrX5Ze03TbQ&usqp=CAU">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet deserunt impedit voluptatum dolor cumque nesciunt autem! Vitae magnam nulla inventore.</p>
+                <h6>Price:4000</h6>
+                <span></span>
+                <button>Add-cart</button>
+            </div>
+
+        </section>
+        <div class="select">
+
+        </div>
+
+
+        <script>
+            var noti=document.querySelector("h1")
+            var select=document.querySelector('.select')
+            var button=document.getElementsByTagName('button')
+
+            for(let but of button){
+                but.addEventListener('click',(e)=>{
+                    var add=Number(noti.getAttribute('data-count')||0)
+                    noti.setAttribute('data-count',add+1)
+                    noti.classList.add('zero')
+
+
+                    var parent=e.target.parentNode
+                    var clone=parent.cloneNode(true)
+                    select.appendChild(clone)
+                    clone.lastElementChild.innerText="Buy-now"
+                    if(clone){
+                        noti.onclick =()=>{
+                            select.classList.toggle('display')
+                        }
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>
